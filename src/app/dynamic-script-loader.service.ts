@@ -6,7 +6,7 @@ interface Scripts {
 }
 
 export const ScriptStore: Scripts[] = [
-  { name: 'leaflet-search', src: 'assets/leaflet/leaflet-search.src.js' }
+  { name: 'leaflet-search', src: '../assets/leaflet/leaflet-search.src.js' }
 ];
 
 declare var document: any;
