@@ -39,12 +39,13 @@ export class AppComponent implements OnInit {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 		
-		// L.Routing.control({
-		// 	waypoints: [
-		// 		L.latLng(57.74, 11.94),
-		// 		L.latLng(57.6792, 11.949)
-		// 	]
-		// }).addTo(map);
+		//needs some work here , the path is not working after i added the search layer
+		L.Routing.control({
+			waypoints: [
+				L.latLng(57.74, 11.94),
+				L.latLng(57.6792, 11.949)
+			]
+		}).addTo(map);
 
 		//pan to location of choice
 		map.panTo(new L.LatLng(57.74, 11.94));
@@ -58,17 +59,6 @@ export class AppComponent implements OnInit {
 		});
 
 		this.loadScripts(map);
-		// map.addControl( new L.Control.Search({
-		// 	url: 'https://nominatim.openstreetmap.org/search?format=json&q={s}',
-		// 	jsonpParam: 'json_callback',
-		// 	propertyName: 'display_name',
-		// 	propertyLoc: ['lat','lon'],
-		// 	marker: L.circleMarker([0,0],{radius:30}),
-		// 	autoCollapse: true,
-		// 	autoType: false,
-		// 	minLength: 2
-		// }) );
-
 	}
 	
 	private loadScripts(map) {
